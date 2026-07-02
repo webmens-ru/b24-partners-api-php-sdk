@@ -6,10 +6,10 @@ namespace Webmens\B24PartnersApi\DTO;
 
 class NetflowClientItem
 {
-    public readonly int $clientId;
-    public readonly ?string $clientName;
-    public readonly ?string $clientType;
-    public readonly ?float $impact;
+    public int $clientId;
+    public ?string $clientName;
+    public ?string $clientType;
+    public ?float $impact;
 
     public function __construct(array $data)
     {

@@ -6,10 +6,10 @@ namespace Webmens\B24PartnersApi\DTO;
 
 class Payment
 {
-    public readonly ?string $shortUrl;
-    public readonly ?string $invoicePdf;
-    public readonly ?string $paidUntil;
-    public readonly ?string $statusCode;
+    public ?string $shortUrl;
+    public ?string $invoicePdf;
+    public ?string $paidUntil;
+    public ?string $statusCode;
 
     public function __construct(array $data)
     {

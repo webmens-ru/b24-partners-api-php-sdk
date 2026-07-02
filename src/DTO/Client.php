@@ -6,14 +6,14 @@ namespace Webmens\B24PartnersApi\DTO;
 
 class Client
 {
-    public readonly int $cloudId;
-    public readonly string $portalUrl;
-    public readonly string $email;
-    public readonly string $editionName;
-    public readonly ?string $licenseCode;
-    public readonly ?int $licenseId;
-    public readonly ?\DateTimeImmutable $licenseEndDate;
-    public readonly ?\DateTimeImmutable $createdAt;
+    public int $cloudId;
+    public string $portalUrl;
+    public string $email;
+    public string $editionName;
+    public ?string $licenseCode;
+    public ?int $licenseId;
+    public ?\DateTimeImmutable $licenseEndDate;
+    public ?\DateTimeImmutable $createdAt;
 
     public function __construct(array $data)
     {

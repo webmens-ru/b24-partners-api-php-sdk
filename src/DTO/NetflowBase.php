@@ -6,9 +6,9 @@ namespace Webmens\B24PartnersApi\DTO;
 
 class NetflowBase
 {
-    public readonly ?string $date;
-    public readonly ?float $totalAmount;
-    public readonly ?int $totalClients;
+    public ?string $date;
+    public ?float $totalAmount;
+    public ?int $totalClients;
 
     public function __construct(array $data)
     {

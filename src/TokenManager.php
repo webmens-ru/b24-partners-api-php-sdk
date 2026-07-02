@@ -12,8 +12,8 @@ class TokenManager
     public function __construct(
         string $accessToken,
         string $refreshToken,
-        private readonly string $clientId,
-        private readonly string $clientSecret,
+        private string $clientId,
+        private string $clientSecret,
     ) {
         $this->accessToken = $accessToken;
         $this->refreshToken = $refreshToken;

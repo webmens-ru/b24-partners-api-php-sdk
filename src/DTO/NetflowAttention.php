@@ -6,11 +6,11 @@ namespace Webmens\B24PartnersApi\DTO;
 
 class NetflowAttention
 {
-    public readonly int $clientId;
-    public readonly ?string $clientName;
-    public readonly ?string $riskType;
-    public readonly ?float $impact;
-    public readonly ?string $forecast;
+    public int $clientId;
+    public ?string $clientName;
+    public ?string $riskType;
+    public ?float $impact;
+    public ?string $forecast;
 
     public function __construct(array $data)
     {

@@ -7,21 +7,21 @@ namespace Webmens\B24PartnersApi\DTO;
 class NetflowDictionary
 {
     /** @var array<string, string> */
-    public readonly array $clientTypes;
+    public array $clientTypes;
     /** @var array<string, string> */
-    public readonly array $eventTypes;
+    public array $eventTypes;
     /** @var array<string, string> */
-    public readonly array $riskTypes;
+    public array $riskTypes;
     /** @var array<string, string> */
-    public readonly array $forecastStatuses;
+    public array $forecastStatuses;
     /** @var array<string, string> */
-    public readonly array $forecastOutcomes;
+    public array $forecastOutcomes;
     /** @var array<string, string> */
-    public readonly array $forecastVerdicts;
+    public array $forecastVerdicts;
     /** @var array<string, string> */
-    public readonly array $regions;
+    public array $regions;
     /** @var array<string, string> */
-    public readonly array $licenses;
+    public array $licenses;
 
     public function __construct(array $data)
     {

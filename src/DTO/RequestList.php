@@ -7,8 +7,8 @@ namespace Webmens\B24PartnersApi\DTO;
 class RequestList
 {
     /** @var Request[] */
-    public readonly array $items;
-    public readonly Pagination $pagination;
+    public array $items;
+    public Pagination $pagination;
 
     public function __construct(array $data)
     {

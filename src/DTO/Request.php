@@ -6,15 +6,15 @@ namespace Webmens\B24PartnersApi\DTO;
 
 class Request
 {
-    public readonly int $requestId;
-    public readonly ?int $orderId;
-    public readonly string $statusCode;
-    public readonly string $statusName;
-    public readonly ?string $paymentType;
-    public readonly ?string $shortUrl;
-    public readonly ?string $paidUntil;
-    public readonly ?array $client;
-    public readonly ?array $basket;
+    public int $requestId;
+    public ?int $orderId;
+    public string $statusCode;
+    public string $statusName;
+    public ?string $paymentType;
+    public ?string $shortUrl;
+    public ?string $paidUntil;
+    public ?array $client;
+    public ?array $basket;
 
     public function __construct(array $data)
     {

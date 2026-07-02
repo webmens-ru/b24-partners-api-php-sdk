@@ -6,10 +6,10 @@ namespace Webmens\B24PartnersApi\DTO;
 
 class NetflowSummary
 {
-    public readonly ?string $dateFrom;
-    public readonly ?string $dateTo;
-    public readonly ?float $totalAmount;
-    public readonly ?int $totalClients;
+    public ?string $dateFrom;
+    public ?string $dateTo;
+    public ?float $totalAmount;
+    public ?int $totalClients;
 
     public function __construct(array $data)
     {

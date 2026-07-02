@@ -199,9 +199,10 @@ class HttpClient
     /**
      * Throw appropriate exception based on HTTP status code.
      *
+     * @return never
      * @throws PartnerApiException
      */
-    private function throwException(ResponseInterface $response): never
+    private function throwException(ResponseInterface $response)
     {
         $statusCode = $response->getStatusCode();
         $body = (string) $response->getBody();

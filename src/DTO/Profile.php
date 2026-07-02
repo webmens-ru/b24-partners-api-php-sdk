@@ -6,11 +6,11 @@ namespace Webmens\B24PartnersApi\DTO;
 
 class Profile
 {
-    public readonly int $partnerId;
-    public readonly string $name;
-    public readonly ?string $inn;
-    public readonly ?string $email;
-    public readonly ?string $phone;
+    public int $partnerId;
+    public string $name;
+    public ?string $inn;
+    public ?string $email;
+    public ?string $phone;
 
     public function __construct(array $data)
     {

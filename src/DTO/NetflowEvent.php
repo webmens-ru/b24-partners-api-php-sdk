@@ -6,12 +6,12 @@ namespace Webmens\B24PartnersApi\DTO;
 
 class NetflowEvent
 {
-    public readonly int $eventId;
-    public readonly ?int $clientId;
-    public readonly ?string $clientType;
-    public readonly ?string $eventType;
-    public readonly ?float $amount;
-    public readonly ?string $date;
+    public int $eventId;
+    public ?int $clientId;
+    public ?string $clientType;
+    public ?string $eventType;
+    public ?float $amount;
+    public ?string $date;
 
     public function __construct(array $data)
     {

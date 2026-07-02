@@ -6,9 +6,9 @@ namespace Webmens\B24PartnersApi\DTO;
 
 class Pagination
 {
-    public readonly int $page;
-    public readonly int $limit;
-    public readonly ?int $totalCount;
+    public int $page;
+    public int $limit;
+    public ?int $totalCount;
 
     public function __construct(array $data)
     {
