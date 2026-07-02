@@ -1,0 +1,29 @@
+FROM php:8.1-cli
+
+# Install extensions
+RUN apt-get update && apt-get install -y \
+    git \
+    unzip \
+    libzip-dev \
+    && docker-php-ext-install zip \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+WORKDIR /app
+
+# Copy composer files first for caching
+COPY composer.json ./
+
+# Install dependencies
+RUN composer install --no-scripts --no-autoloader
+
+# Copy source code
+COPY . .
+
+# Generate autoload
+RUN composer dump-autoload
+
+# Run tests
+CMD ["vendor/bin/phpunit", "--colors=always"]
