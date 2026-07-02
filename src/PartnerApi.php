@@ -12,6 +12,7 @@ use Webmens\B24PartnersApi\Requests\RequestsClient;
 class PartnerApi
 {
     private HttpClient $http;
+    private TokenManager $tokenManager;
     private ?ProfileClient $profile = null;
     private ?ClientsClient $clients = null;
     private ?RequestsClient $requests = null;
@@ -23,14 +24,24 @@ class PartnerApi
         string $clientId,
         string $clientSecret,
     ) {
-        $tokenManager = new TokenManager(
+        $this->tokenManager = new TokenManager(
             $accessToken,
             $refreshToken,
             $clientId,
             $clientSecret,
         );
 
-        $this->http = new HttpClient($tokenManager);
+        $this->http = new HttpClient($this->tokenManager);
+    }
+
+    /**
+     * Set callback to persist tokens after refresh.
+     *
+     * @param callable $callback function(string $accessToken, string $refreshToken): void
+     */
+    public function onRefresh(callable $callback): void
+    {
+        $this->tokenManager->onRefresh($callback);
     }
 
     public function profile(): ProfileClient

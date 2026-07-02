@@ -9,6 +9,9 @@ class TokenManager
     private string $accessToken;
     private string $refreshToken;
 
+    /** @var callable|null */
+    private $onRefresh = null;
+
     public function __construct(
         string $accessToken,
         string $refreshToken,
@@ -39,9 +42,23 @@ class TokenManager
         return $this->clientSecret;
     }
 
+    /**
+     * Set callback to persist tokens after refresh.
+     *
+     * @param callable $callback function(string $accessToken, string $refreshToken): void
+     */
+    public function onRefresh(callable $callback): void
+    {
+        $this->onRefresh = $callback;
+    }
+
     public function updateTokens(string $accessToken, string $refreshToken): void
     {
         $this->accessToken = $accessToken;
         $this->refreshToken = $refreshToken;
+
+        if ($this->onRefresh !== null) {
+            ($this->onRefresh)($accessToken, $refreshToken);
+        }
     }
 }
