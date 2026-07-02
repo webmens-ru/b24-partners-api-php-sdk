@@ -210,6 +210,11 @@ class HttpClient
         $message = $data['error']['message'] ?? $data['message'] ?? 'Unknown error';
         $details = $data['error']['details'] ?? [];
 
+        // Include raw response in message for debugging
+        if ($message === 'Unknown error' && !empty($body)) {
+            $message = 'Unknown error. Response: ' . substr($body, 0, 500);
+        }
+
         throw match (true) {
             $statusCode === 401 => new UnauthorizedException($message, $statusCode),
             $statusCode === 403 => new ForbiddenException($message, $statusCode),
